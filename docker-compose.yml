@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  core:
+    build: .
+    ports:
+      - '5000:5000'
+    environment:
+      PYTHONUNBUFFERED: 1
+    volumes:
+      - transformers-cache:/app/cache
+volumes:
+  transformers-cache:

@@ -1,0 +1,40 @@
+{
+  "name": "Summarizer",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension was created with the awesome extensionizr.com",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js":["contentscript.js"]
+  }],
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "commands": {
+    "summarize": {
+      "suggested_key": "Ctrl+Period",
+      "description": "Send text to server"
+    },
+    "showSummaries": {
+      "suggested_key": "Ctrl+Comma",
+      "description": "Show Summaries (not implemented)"
+    }
+  },
+  "permissions": [
+    "contextMenus",
+    "notifications",
+    "tabs",
+    "activeTab",
+    "https://huggingface.co/*"
+  ]
+}
